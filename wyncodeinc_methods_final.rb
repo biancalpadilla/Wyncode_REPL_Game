@@ -39,7 +39,7 @@ module GameMethods
   ## Scream Canister Scoring
   def screamCanScore(scream_canister = 0, screams = 0)
   puts "\nLast Round: #{scream_canister.round}%"
-  puts "Earned/lost this Round: #{screams}%" 
+  puts "Earned/lost this Round: #{screams}%"
     total = scream_canister + screams
     if total < 0
       total = 0
@@ -59,12 +59,12 @@ module GameMethods
     if scream_canister < 0
       puts "\n*Scream Canister*"
       puts "=" * size
-      puts " " 
+      puts " "
       puts "=" * size
     else
       puts "\n*Scream Canister*"
       puts "=" * size
-      puts "*" * (scream_canister.round * (0.01 * size)) 
+      puts "*" * (scream_canister.round * (0.01 * size))
       puts "=" * size
     end
   end
@@ -137,11 +137,11 @@ module GameMethods
     pair_programmer = randomPairProgrammer
     screams = 0
     case coder_action
-    when "coding" 
+    when "coding"
       puts "\n#{coder_name} is quietly coding."
       if scare_tactic == "roar"
-        say monster_name, roar 
-        say coder_name, scared_min_message
+        say monster_name, roar
+        say coder_name, scared_max_message
         screams += rand(6..10)
         rand(6..10)
       elsif scare_tactic == "spooky noise"
@@ -149,7 +149,7 @@ module GameMethods
         say coder_name, scared_mid_message
         screams += rand(4..8)
         rand(4..8)
-      elsif scare_tactic == "invisibility" 
+      elsif scare_tactic == "invisibility"
         say monster_name, invisible
         say coder_name, scared_min_message
         screams -= rand(3..5)
@@ -163,12 +163,12 @@ module GameMethods
       say coder_name, scared_max_message
       puts "OMG Ed heard you! You've lost screams."
       screams -= rand(4..8)
-    elsif scare_tactic == "spooky noise" 
+    elsif scare_tactic == "spooky noise"
       say monster_name, spooky_noise
       say coder_name, scared_mid_message
       puts "You were just quiet enough not to get caught by the Ed!"
       screams += rand(8..15)
-    elsif scare_tactic == "invisibility" 
+    elsif scare_tactic == "invisibility"
       say monster_name, invisible
       say coder_name, scared_min_message
       puts "Neither Ed or #{coder_name} could see you!\nPoints for avoiding being caught!"
@@ -183,12 +183,12 @@ module GameMethods
         say coder_name, scared_min_message
         puts "#{coder_name} called you out on your scare tactic!! Screams lost!"
         screams -= rand(3..4)
-      elsif scare_tactic == "spooky noise" 
+      elsif scare_tactic == "spooky noise"
         say monster_name, spooky_noise
         say coder_name, scared_min_message
         puts "#{coder_name} and #{pair_programmer} are not shaken up! Screams lost!"
         screams = rand(3..4)
-      elsif scare_tactic == "invisibility" 
+      elsif scare_tactic == "invisibility"
         say monster_name, invisible
         say coder_name, scared_min_message
         puts "Great job staying silent or #{coder_name} and #{pair_programmer} would've called you out!"
